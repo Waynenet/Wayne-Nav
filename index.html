@@ -1,271 +1,238 @@
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="author" content="Wayne">
-    <title>WayneのNav</title>
-    <meta name="keywords" content="网址导航,网站导航,Wayne,Navigation"/>
-    <meta name="description" content="WayneのNav - 一个纯静态导航网站，精挑细选优质书签，无任何广告行为。">
-    <link rel="shortcut icon" type="image/x-icon" href="images/wayne.png"/>
-    <link rel="preload" href="https://gcore.jsdelivr.net/npm/wayne-img@latest/font/UnidreamLED.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="stylesheet" href="css/core.min.css">
-    <!-- lozad -->
-    <script src="https://gcore.jsdelivr.net/npm/wayne-img@latest/js/lozad.min.js"></script>
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/wayne-img@latest/bootstrap/bootstrap-5.3.7-dist/css/bootstrap.min.css">
-    <script src="https://gcore.jsdelivr.net/npm/wayne-img@latest/bootstrap/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
-    <!-- tabler-icons -->
-    <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-    <!-- Izitoast -->
-    <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/wayne-img@latest/iziToast-1.4.0/css/iziToast.min.css">
-    <script type="text/javascript" src="https://gcore.jsdelivr.net/npm/wayne-img@latest/iziToast-1.4.0/js/iziToast.min.js"></script>
-    <!-- gsap -->
-    <script src="https://gcore.jsdelivr.net/npm/gsap@3.13/dist/gsap.min.js"></script>
-    <!-- LXGW WenKai -->
-    <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@latest/lxgwwenkai-regular/result.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@latest/lxgwwenkai-regular/result.css"></noscript>
-</head>
-<body class="page-body">
-    <div id="pointer"></div>
-    <div class="page-container">
-        <div class="sidebar-menu toggle-others fixed">
-            <div class="sidebar-menu-inner bgchange">
-                <header class="logo-env">
-                    <!-- logo -->
-                    <div class="logo">
-                        <a href="#" class="logo-expanded">
-                            <img src="images/navigation.png" width="130px" height="40px" alt="" />
-                        </a>
-                        <a href="#" class="logo-collapsed">
-                            <img src="images/wayne.png" width="40" alt="" />
-                        </a>
-                    </div>
-                    <div class="mobile-menu-toggle d-md-none">
-                        <a href="#" data-toggle="user-info-menu"><i class="ti ti-apps"></i></a>
-                        <a href="#" data-toggle="mobile-menu"><i class="ti ti-menu-2"></i></a>
-                    </div>
-                </header>
-                <ul id="main-menu" class="main-menu">
-                    <!-- 内容将通过 core.js 动态加载到这里 -->
-                </ul>
-                <div class="timeshow" id="times">
-                    2000.00.00&nbsp;<span
-                        class="weekday">星期一</span><br><span class="time-text">00:00:00</span>
-                </div>
-            </div>
-        </div>
-        <div class="main-content">
-            <nav class="navbar user-info-navbar" role="navigation">
-                <ul class="user-info-menu list-inline list-unstyled">
-                    <li class="d-none d-lg-block">
-                        <a href="#" data-toggle="sidebar">
-                            <i class="ti ti-menu-2"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://home.3301.qzz.io/" target="_blank">
-                            <i class="ti ti-home"></i> WayneのHome
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://Waynenet.github.io/" target="_black">
-                        <i class="ti ti-brand-blogger"></i> WayneのBlog
-                        </a>
-                    </li>
-                </ul>
-                <div class="weather pull-right" id="weather-widget">
-                    <span id="city_text"></span>
-                    <span id="weather-info-container">
-                        <span id="wea_text"></span>
-                        <span id="temp_text"></span>
-                        <span id="wind_text"></span>
-                    </span>
-                </div>
-            </nav>
-            <!-- 实用搜索 -->
-            <div id="search">
-                <form action="" method="get" target="_blank" id="super-search-fm">
-                    <!-- 整个搜索栏将由JS在这个容器内渲染 -->
-                    <div id="search-container"></div>
-                </form>
-            </div>
-            <!-- 实用搜索 end -->
-            <br />
-            <div id="dynamic-content-container">
-                <!-- 内容将通过 core.js 动态加载到这里 -->
-            </div>
-            <h6><i id="about"></i></h6>
-            <div class="row">
-                <div class="col-12">
-                    <div class="w-widget panel glass-effect bcorder">
-                        <!-- 关于网站 -->
-                        <h6 class="tag">关于本站</h6>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-12 myinfo">
-                                    <p>精挑细选优质书签，无任何广告行为</p>
-                                    <p>如书签给您造成各种问题，请与相应站长商讨，与本站无关</p>
-                                    <p>如本站对您有所帮助，请随意打赏，谢谢~</p>
-                                    <div class="post-reward">
-                                        <div class="reward-button">
-                                            <i class="ti ti-qrcode"></i> 打赏
-                                        </div>
-                                        <div class="reward-main">
-                                            <ul class="reward-all glass-effect bcorder">
-                                                <li class="reward-item">
-                                                    <a href="images/wechat.jpg" target="_blank">
-                                                        <img class="lozad post-qr-code-img" src="images/wechat.jpg" alt="微信">
-                                                    </a>
-                                                    <div class="post-qr-code-desc">微信</div>
-                                                </li>
-                                                <li class="reward-item">
-                                                    <a href="images/alipay.jpg" target="_blank">
-                                                        <img class="lozad post-qr-code-img" src="images/alipay.jpg" alt="支付宝">
-                                                    </a>
-                                                    <div class="post-qr-code-desc">支付宝</div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 关于站长 -->
-                            <h6 class="tag">关于站长</h6>
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="w-widget box2" 
-                                         onclick="window.open('https://Waynenet.github.io/about/', '_blank')" 
-                                         data-bs-toggle="tooltip" data-bs-placement="bottom" title="关于站长">
-                                        <div class="w-comment-entry">
-                                            <a> <img src="images/wayne.png" class="lozad img-circle"/> </a>
-                                            <div class="w-comment">
-                                                <a class="overflowClip_1"> 
-                                                    <strong>Wayne</strong> 
-                                                </a>
-                                                <p class="overflowClip_2"> 
-                                                    闲散人士，编程小白，游戏菜鸟，影视迷，音乐狂，小说家，诗人，怪客。
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br />
-                                <div class="col-sm-8">
-                                    <div class="poem">
-                                        <p>
-                                            <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-                                            <div id="poem_sentence" style="display:inline-block;"></div>
-                                            <div id="poem_info" style="display:inline-block;"></div>
-                                            <script type="text/javascript">
-                                                jinrishici.load(function(result) {
-                                                    var sentence = document.querySelector("#poem_sentence")
-                                                    var info = document.querySelector("#poem_info")
-                                                    sentence.innerHTML = result.data.content
-                                                    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
-                                                });
-                                            </script>
-                                        </p>
-                                        <p> 本站项目地址 <a href="https://github.com/Waynenet/Wayne-Nav" target="_blank">
-                                                            <span class="label label-info" data-bs-toggle="tooltip">
-                                                                <i class="ti ti-brand-github-filled"></i>WayneのNav</span>
-                                                        </a>
-                                                        <span> 欢迎大家提交issue </span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="suspension">
-                <ul>
-                    <!-- 回到顶部 -->
-                    <a rel="go-top">
-                        <li class="suspension-item" id="topup" style="display: none;">
-                            <div class="suspension_box glass-effect bcorder suspension_upward">
-                                <i class="ti ti-arrow-up"></i>
-                            </div>
-                            <div class="suspension-panel suspension-tooltip glass-effect bcorder">返回顶部</div>
-                        </li>
-                    </a>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="author" content="Wayne">
+		<title>WayneのNav</title>
+		<meta name="keywords" content="网址导航,网站导航,Wayne,Navigation" />
+		<meta name="description" content="WayneのNav - 一个纯静态导航网站，精挑细选优质书签，无任何广告行为。">
+		<link rel="shortcut icon" type="image/x-icon" href="images/wayne.png" />
+		<link rel="preload" href="https://gcore.jsdelivr.net/npm/wayne-img@latest/font/UnidreamLED.ttf" as="font"
+			type="font/ttf" crossorigin>
+		<link rel="stylesheet" href="css/core.min.css">
+		<!-- lozad -->
+		<script src="https://gcore.jsdelivr.net/npm/wayne-img@latest/js/lozad.min.js"></script>
+		<!-- bootstrap -->
+		<link rel="stylesheet"
+			href="https://gcore.jsdelivr.net/npm/wayne-img@latest/bootstrap/bootstrap-5.3.7-dist/css/bootstrap.min.css">
+		<script
+			src="https://gcore.jsdelivr.net/npm/wayne-img@latest/bootstrap/bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js">
+		</script>
+		<!-- tabler-icons -->
+		<link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+		<!-- Izitoast -->
+		<link rel="stylesheet"
+			href="https://gcore.jsdelivr.net/npm/wayne-img@latest/iziToast-1.4.0/css/iziToast.min.css">
+		<script type="text/javascript"
+			src="https://gcore.jsdelivr.net/npm/wayne-img@latest/iziToast-1.4.0/js/iziToast.min.js"></script>
+		<!-- gsap -->
+		<script src="https://gcore.jsdelivr.net/npm/gsap@3.13/dist/gsap.min.js"></script>
+		<!-- LXGW WenKai -->
+		<link rel="stylesheet"
+			href="https://gcore.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@latest/lxgwwenkai-regular/result.css"
+			media="print" onload="this.media='all'">
+		<noscript>
+			<link rel="stylesheet"
+				href="https://gcore.jsdelivr.net/npm/@callmebill/lxgw-wenkai-web@latest/lxgwwenkai-regular/result.css">
+		</noscript>
+	</head>
+	<body class="page-body">
+		<div id="pointer"></div>
+		<div class="page-container">
+			<div class="sidebar-menu toggle-others fixed">
+				<div class="sidebar-menu-inner bgchange">
+					<header class="logo-env">
+						<!-- logo -->
+						<div class="logo">
+							<a href="#" class="logo-expanded">
+								<img src="images/navigation.png" width="130px" height="40px" alt="" />
+							</a>
+							<a href="#" class="logo-collapsed">
+								<img src="images/wayne.png" width="40" alt="" />
+							</a>
+						</div>
+						<div class="mobile-menu-toggle d-md-none">
+							<a href="#" data-toggle="user-info-menu"><i class="ti ti-apps"></i></a>
+							<a href="#" data-toggle="mobile-menu"><i class="ti ti-menu-2"></i></a>
+						</div>
+					</header>
+					<ul id="main-menu" class="main-menu">
+						<!-- 内容将通过 core.js 动态加载到这里 -->
+					</ul>
+					<div class="timeshow" id="times">
+						2000.00.00&nbsp;<span class="weekday">星期一</span><br><span class="time-text">00:00:00</span>
+					</div>
+				</div>
+			</div>
+			<div class="main-content">
+				<nav class="navbar user-info-navbar" role="navigation">
+					<ul class="user-info-menu list-inline list-unstyled">
+						<li class="d-none d-lg-block">
+							<a href="#" data-toggle="sidebar">
+								<i class="ti ti-menu-2"></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://dh.xyf111.top/" target="_blank">
+								<i class="ti ti-home"></i> 闲云导航
+							</a>
+						</li>
+						<li>
+							<a href="https://alist.xyf111.top/" target="_black">
+								<i class="ti ti-brand-blogger"></i> OpenList
+							</a>
+						</li>
+					</ul>
+					<div class="weather pull-right" id="weather-widget">
+						<span id="city_text"></span>
+						<span id="weather-info-container">
+							<span id="wea_text"></span>
+							<span id="temp_text"></span>
+							<span id="wind_text"></span>
+						</span>
+					</div>
+				</nav>
+				<!-- 实用搜索 -->
+				<div id="search">
+					<form action="" method="get" target="_blank" id="super-search-fm">
+						<!-- 整个搜索栏将由JS在这个容器内渲染 -->
+						<div id="search-container"></div>
+					</form>
+				</div>
+				<!-- 实用搜索 end -->
+				<br />
+				<div id="dynamic-content-container">
+					<!-- 内容将通过 core.js 动态加载到这里 -->
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="w-widget panel glass-effect bcorder">
 
-                    <!-- 夜间模式 -->
-                    <li class="suspension-item">
-                        <div class="suspension_box glass-effect bcorder suspension_ax" id="dark-mode-switch">
-                            <i class="ti ti-moon"></i>
-                            <i class="ti ti-sun"></i>
-                        </div>
-                        <div class="suspension-panel suspension-tooltip glass-effect bcorder" id="night-mode-tooltip">切换夜间模式</div>
-                    </li>
+							<div class="row justify-content-center" style="margin:0;padding: 1.5em;rem 0">
+								<div class="col-auto text-center poem">
+									<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8">
+									</script>
+									<div id="poem_sentence" style="display:inline-block;"></div>
+									<div id="poem_info" style="display:inline-block;"></div>
+									<script>
+										jinrishici.load(function(result) {
+											var sentence = document.querySelector("#poem_sentence");
+											var info = document.querySelector("#poem_info");
+											sentence.innerHTML = result.data.content;
+											info.innerHTML = '【' + result.data.origin.dynasty + '】' +
+												result.data.origin.author + '《' +
+												result.data.origin.title + '》';
+										});
+									</script>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="suspension">
+					<ul>
+						<!-- 回到顶部 -->
+						<a rel="go-top">
+							<li class="suspension-item" id="topup" style="display: none;">
+								<div class="suspension_box glass-effect bcorder suspension_upward">
+									<i class="ti ti-arrow-up"></i>
+								</div>
+								<div class="suspension-panel suspension-tooltip glass-effect bcorder">返回顶部</div>
+							</li>
+						</a>
 
-                    <!-- 外观设置 -->
-                    <li class="suspension-item" id="settings-container">
-                        <ul class="settings-controls" id="settings-controls">
-                            <li class="suspension-item control-item overlay-main">
-                                <div class="suspension_box glass-effect bcorder suspension_control" data-control="overlay">
-                                    <i class="ti ti-droplet"></i>
-                                </div>
-                                <div class="suspension-panel suspension-tooltip glass-effect bcorder">背景遮罩</div>
-                                <div class="suspension-panel control-slider-panel glass-effect bcorder" id="overlay-panel">
-                                    <input type="range" id="overlay-slider" class="control-slider" min="0" max="0.8" step="0.05" data-variable="--overlay-opacity" data-unit="">
-                                    <span class="slider-value">0.4</span>
-                                </div>
-                            </li>
-                            <li class="suspension-item control-item">
-                                <div class="suspension_box glass-effect bcorder suspension_control" data-control="blur">
-                                    <i class="ti ti-blur"></i>
-                                </div>
-                                <div class="suspension-panel suspension-tooltip glass-effect bcorder">模块模糊</div>
-                                <div class="suspension-panel control-slider-panel glass-effect bcorder" id="blur-panel">
-                                    <input type="range" id="blur-slider" class="control-slider" min="0" max="20" step="1" data-variable="--module-blur-value" data-unit="px">
-                                    <span class="slider-value">12</span>
-                                </div>
-                            </li>
-                            <li class="suspension-item control-item">
-                                <div class="suspension_box glass-effect bcorder suspension_control" data-control="alpha">
-                                    <i class="ti ti-adjustments-alt"></i>
-                                </div>
-                                <div class="suspension-panel suspension-tooltip glass-effect bcorder">模块透明</div>
-                                 <div class="suspension-panel control-slider-panel glass-effect bcorder" id="alpha-panel">
-                                    <input type="range" id="alpha-slider" class="control-slider" min="0" max="1" step="0.05" data-variable="--module-bg-alpha" data-unit="">
-                                    <span class="slider-value">0.1</span>
-                                </div>
-                            </li>
-                            <li class="suspension-item control-item">
-                                <div class="suspension_box glass-effect bcorder suspension_control" data-control="palette-main">
-                                    <i class="ti ti-palette"></i>
-                                </div>
-                                <div class="suspension-panel suspension-tooltip glass-effect bcorder">主题基色</div>
-                                <div class="suspension-panel control-slider-panel glass-effect bcorder" id="palette-main-panel">
-                                    <input type="color" id="palette-main-color-picker" class="color-picker" data-variable="--palette-main-rgb">
-                                    <span class="slider-value">#FFFFFF</span>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="suspension_box glass-effect bcorder suspension_settings_toggle" id="settings-toggle">
-                            <i class="ti ti-settings"></i>
-                        </div>
-                        <div class="suspension-panel suspension-tooltip glass-effect bcorder">外观设置</div>
-                    </li>
-                </ul>
-            </div>
-            <footer class="main-footer">
-                <div class="footer-inner">
-                    <div class="footer-text">COPYRIGHT © 2022-<script>document.write( new Date().getFullYear() );</script> & Made by 
-                        <a href="https://home.3301.qzz.io/" target="_blank">
-                            <strong>Wayne</strong>
-                        </a>
-                    </div>
-                    <div id="time"></div>
-                    <div id="result"></div>
-                </div>
-            </footer>
-        </div>
-    </div>
-    <canvas id="starfield"></canvas>
-    <script src="js/core.min.js"></script>
-</body>
+						<!-- 夜间模式 -->
+						<li class="suspension-item">
+							<div class="suspension_box glass-effect bcorder suspension_ax" id="dark-mode-switch">
+								<i class="ti ti-moon"></i>
+								<i class="ti ti-sun"></i>
+							</div>
+							<div class="suspension-panel suspension-tooltip glass-effect bcorder"
+								id="night-mode-tooltip">切换夜间模式</div>
+						</li>
+
+						<!-- 外观设置 -->
+						<li class="suspension-item" id="settings-container">
+							<ul class="settings-controls" id="settings-controls">
+								<li class="suspension-item control-item overlay-main">
+									<div class="suspension_box glass-effect bcorder suspension_control"
+										data-control="overlay">
+										<i class="ti ti-droplet"></i>
+									</div>
+									<div class="suspension-panel suspension-tooltip glass-effect bcorder">背景遮罩</div>
+									<div class="suspension-panel control-slider-panel glass-effect bcorder"
+										id="overlay-panel">
+										<input type="range" id="overlay-slider" class="control-slider" min="0" max="0.8"
+											step="0.05" data-variable="--overlay-opacity" data-unit="">
+										<span class="slider-value">0.4</span>
+									</div>
+								</li>
+								<li class="suspension-item control-item">
+									<div class="suspension_box glass-effect bcorder suspension_control"
+										data-control="blur">
+										<i class="ti ti-blur"></i>
+									</div>
+									<div class="suspension-panel suspension-tooltip glass-effect bcorder">模块模糊</div>
+									<div class="suspension-panel control-slider-panel glass-effect bcorder"
+										id="blur-panel">
+										<input type="range" id="blur-slider" class="control-slider" min="0" max="20"
+											step="1" data-variable="--module-blur-value" data-unit="px">
+										<span class="slider-value">12</span>
+									</div>
+								</li>
+								<li class="suspension-item control-item">
+									<div class="suspension_box glass-effect bcorder suspension_control"
+										data-control="alpha">
+										<i class="ti ti-adjustments-alt"></i>
+									</div>
+									<div class="suspension-panel suspension-tooltip glass-effect bcorder">模块透明</div>
+									<div class="suspension-panel control-slider-panel glass-effect bcorder"
+										id="alpha-panel">
+										<input 输入="range" id="alpha-slider" class="control-slider" min="0" max="1"
+											step="0.05" data-variable="--module-bg-alpha" data-unit="">
+										<span class="slider-value">0.1</span>
+									</div>
+								</li>
+								<li class="suspension-item control-item">
+									<div class="suspension_box glass-effect bcorder suspension_control"
+										data-control="palette-main">
+										<i class="ti ti-palette"></i>
+									</div>
+									<div class="suspension-panel suspension-tooltip glass-effect bcorder">主题基色</div>
+									<div class="suspension-panel control-slider-panel glass-effect bcorder"
+										id="palette-main-panel">
+										<input type="color" id="palette-main-color-picker" class="color-picker"
+											data-variable="--palette-main-rgb">
+										<span class="slider-value">#FFFFFF</span>
+									</div>
+								</li>
+							</ul>
+							<div class="suspension_box glass-effect bcorder suspension_settings_toggle"
+								id="settings-toggle">
+								<i class="ti ti-settings"></i>
+							</div>
+							<div class="suspension-panel suspension-tooltip glass-effect bcorder">外观设置</div>
+						</li>
+					</ul>
+				</div>
+				<footer class="main-footer">
+					<div class="footer-inner">
+						<div class="footer-text">COPYRIGHT © 2022-<script>
+								document.write(new Date().getFullYear());
+							</script> & Made by
+							<a href="https://home.3301.qzz.io/" target="_blank">
+								<strong>Wayne</strong>
+							</a>
+						</div>
+						<div id="time"></div>
+						<div id="result"></div>
+					</div>
+				</footer>
+			</div>
+		</div>
+		<canvas id="starfield"></canvas>
+		<script src="js/core.min.js"></script>
+	</body>
 </html>
