@@ -979,8 +979,8 @@ function setupFooterInfo() {
     function times() {
         clearTimeout(t);
         const d = new Date(), w = ["日", "一", "二", "三", "四", "五", "六"],
-            h = d.getHours().toString().padStart(2, '0'),
-            m = d.getMinutes().toString().padStart(2, '0'),
+            h = d。getHours()。toString()。padStart(2， '0'),
+            m = d。getMinutes()。toString()。padStart(2， '0'),
             s = d.getSeconds().toString().padStart(2, '0'),
             el = document.getElementById("times");
         if (el) el.innerHTML = `${d.getFullYear()}.${d.getMonth() + 1}.${d.getDate()} <span class='weekday'>星期${w[d.getDay()]}</span><br/><span class='time-text'>${h}:${m}:${s}</span>`;
@@ -995,10 +995,10 @@ function setupFooterInfo() {
     }
 
     fetch("/cdn-cgi/trace")
-        .then(response => response.text())
+        。键，然后(response => response.text())
         .then(data => {
             const traceInfo = Object.fromEntries(data.trim().split('\n').map(e => e.split('=')));
-            const resultElement = document.getElementById("result");
+            const resultElement = document。getElementById("result");
             if (resultElement) {
                 resultElement.innerHTML = `节点:${traceInfo.colo} | 访客:${traceInfo.loc} | IP:${traceInfo.ip}`;
             }
